@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    /* Neutral light gray - Was Lighter Pale Yellow */
+    --foreground: 210 29% 21%;
+    /* Deep Blue for text */
+
+    --card: 210 20% 96%;
+    /* Slightly darker than background for cards - Was Lighter Pale Yellow based */
+    --card-foreground: 210 29% 21%;
+    /* Deep Blue */
+
+    --popover: 210 20% 96%;
+    --popover-foreground: 210 29% 21%;
+
+    --primary: 207 35% 35%;
+    /* Steel Blue */
+    --primary-foreground: 210 20% 98%;
+    /* Neutral light gray for text on primary - Was Pale Yellow */
+
+    --secondary: 203 24% 54%;
+    /* Powder Blue */
+    --secondary-foreground: 210 29% 21%;
+    /* Deep Blue for text on secondary */
+
+    --muted: 203 24% 85%;
+    /* Lighter Powder Blue for muted backgrounds */
+    --muted-foreground: 207 35% 45%;
+    /* Slightly lighter Steel Blue for muted text */
+
+    --accent: 203 24% 90%;
+    /* Lighter Powder Blue for accents - Was Pale Yellow */
+    --accent-foreground: 210 29% 21%;
+    /* Deep Blue text on accent */
+
+    --destructive: 0 72% 51%;
+    /* Default destructive */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 203 24% 75%;
+    /* Powder Blue slightly darker for borders */
+    --input: 203 24% 92%;
+    /* Lighter Powder Blue for input backgrounds - Was Powder Blue */
+    --ring: 207 35% 35%;
+    /* Steel Blue for rings */
+
+    --radius: 0.5rem;
+
+    /* Direct Hex Colors for reference, Tailwind config uses HSL */
+    /* --deep-blue: #213448; */
+    /* --steel-blue: #547792; */
+    /* --powder-blue: #94B4C1; */
+    /* --pale-yellow: #ECEFCA; (Still available for specific use) */
+  }
+
+  .dark {
+    --background: 210 29% 15%;
+    /* Darker Deep Blue for background */
+    --foreground: 210 20% 90%;
+    /* Lighter Neutral Gray for text - Was Lighter Pale Yellow */
+
+    --card: 210 29% 20%;
+    --card-foreground: 210 20% 90%;
+
+    --popover: 210 29% 20%;
+    --popover-foreground: 210 20% 90%;
+
+    --primary: 207 35% 45%;
+    /* Lighter Steel Blue */
+    --primary-foreground: 210 29% 10%;
+
+    --secondary: 203 24% 34%;
+    /* Darker Powder Blue */
+    --secondary-foreground: 210 20% 90%;
+
+    --muted: 203 24% 25%;
+    --muted-foreground: 203 24% 65%;
+
+    --accent: 203 30% 30%;
+    /* Darker Powder Blue for accents - Was Darker Pale Yellow */
+    --accent-foreground: 210 20% 90%;
+
+    --destructive: 0 60% 40%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 203 24% 30%;
+    --input: 203 24% 25%;
+    --ring: 207 35% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .scrollbar-minimal {
+    scrollbar-width: thin;
+    /* Firefox */
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+  }
+
+  .scrollbar-minimal::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-minimal::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-minimal::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+  }
+
+  .scrollbar-minimal:hover::-webkit-scrollbar-thumb {
+    opacity: 0.2;
+  }
+}

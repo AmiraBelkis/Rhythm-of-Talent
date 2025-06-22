@@ -1,0 +1,8 @@
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+    "user": {
+        "name": "Jane Doe",
+        "email": "jane.doe@example.com",
+        "role": "JURY"
+    }
+}
